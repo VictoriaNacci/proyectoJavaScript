@@ -1,0 +1,188 @@
+/* Variables CSS */
+:root {
+    --color-primario: #34495e;
+    --color-secundario: #1abc9c;
+    --color-fondo: #ecf0f1;
+    --color-boton: #2c3e50;
+    --color-boton-hover: #4d6271;
+    --fuente-primaria: 'Lato', sans-serif;
+    --fuente-secundaria: 'Montserrat', sans-serif;
+}
+
+/* Estilos básicos y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-primaria);
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    line-height: 1.5;
+}
+
+h1, h2 {
+    font-family: var(--fuente-secundaria);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+a {
+    transition: color 0.3s;
+}
+
+/* Encabezado y navegación */
+header {
+    background-color: var(--color-primario);
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    color: var(--color-secundario);
+}
+
+/* Contenido principal */
+main {
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Productos */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.producto {
+    background-color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.producto:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.precio {
+    color: var(--color-secundario);
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+
+button {
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    button:hover {
+        background-color: var(--color-boton-hover);
+        transform: translateY(-2px);
+    }
+    
+    button:active {
+        transform: translateY(0);
+    }
+    .cuponDescuento{
+    background-color: var(--color-boton);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+    }
+    
+    /* Pie de página */
+    footer {
+        background-color: var(--color-primario);
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 1rem;
+        margin-top: 2rem;
+        border-radius: 5px;
+    }
+    
+    .footer-link {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .footer-link:hover {
+        color: var(--color-secundario);
+    }
+    
+    /* Animaciones y efectos */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .producto {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    
+    /* Media Queries para diseño responsivo */
+    @media screen and (max-width: 768px) {
+        nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    
+        main {
+            padding: 1rem;
+        }
+    }
+    
