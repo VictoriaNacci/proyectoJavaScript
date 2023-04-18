@@ -12,7 +12,7 @@ const productos = [
         stock: 15,
     }
 ]
-productos.push(nombre:"Zapatilla3", precio:11.000, id:idZapatilla3, stock:5)
+productos.push({nombre:"Zapatilla3", precio:11.000, id:idZapatilla3, stock:5})
 console.log(productos)
 const suma = (parseFloat(valor1,valor2,valor3)) => {return valor1 + valor2 + valor3}
 const descuento = (suma/0.15)
