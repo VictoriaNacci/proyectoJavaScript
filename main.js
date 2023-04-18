@@ -14,7 +14,10 @@ const productos = [
 ]
 productos.push({nombre:"Zapatilla3", precio:11.000, id:idZapatilla3, stock:5})
 console.log(productos)
-const suma = (parseFloat(valor1,valor2,valor3)) => {return valor1 + valor2 + valor3}
+const suma = (valor1, valor2, valor3) => {
+    return parseFloat(valor1) + parseFloat(valor2) + parseFloat(valor3);
+  }
+  
 const descuento = (suma/0.15)
 
 let idZapatilla1 = prompt("Ingrese el Id de la zapatilla que desea")
