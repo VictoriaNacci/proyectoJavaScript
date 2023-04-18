@@ -1,64 +1,62 @@
-const productos = [
-    {
-    nombre: "Zapatilla1",
-    precio: 10.000,
-    id: idZapatilla1,
-    stock: 10,
-    },
-    {
-        nombre: "Zapatilla2",
-        precio: 12.000,
-        id: idZapatilla2,
-        stock: 15,
-    }
-]
-productos.push({nombre:"Zapatilla3", precio:11.000, id:idZapatilla3, stock:5})
-console.log(productos)
-const suma = (valor1, valor2, valor3) => {
-    return parseFloat(valor1) + parseFloat(valor2) + parseFloat(valor3);
-  }
-  
-const descuento = (suma/0.15)
+let precio1;
+let precio2;
+let precio3;
+let continuacion; // Variable que contiene la respuesta del usuario si quiere seguir comprando o no.
+let idZapatilla1;
+let idZapatilla2;
+let idZapatilla3;
+let operacion;
+let codigoDescuento;
+let codigo;
+let precioFinal;
+function suma (precio1, precio2, precio3) {
+    operacion = parseFloat(precio1) + parseFloat(precio2) + parseFloat(precio3);
+};
 
-let idZapatilla1 = prompt("Ingrese el Id de la zapatilla que desea")
+idZapatilla1 = prompt("Ingrese el ID del producto que desea");
+do {
 if (idZapatilla1 <= 3) {
-    let precio1 = prompt("Ingrese el importe de la zapatilla")
-    let continuacion
-    do{
-         continuacion = prompt("¿Desea continuar comprando?");
-        if(continuacion != "no"){
-            let idZapatilla2 = prompt("Ingrese el Id de la zapatilla que desea");
-            if (idZapatilla2 <= 3) {
-                let precio2 = prompt("Ingrese el importe de la zapatilla");
-                let operacion = suma;
-                alert("Su total es de "+ suma + " pesos por los productos " + idZapatilla1 + " y "+ idZapatilla2);
-                    let codigoDescuento
-                    do{
-                        codigoDescuento = prompt("¿Posee algún código de descuento?");
-                        if(codigoDescuento != "no"){
-                            let codigo = prompt("Ingrese su código de descuento");
-                            if (codigo != "ABCD"){
-                                prompt("Código de descuento invalido")     
-                            }else{
-                                let operacion = descuento
-                            alert("Su valor final es de" + descuento + " pesos");
-                            break
-                            }
-                        }else{
-                        alert("Su total es de "+ suma + " pesos por los productos " + idZapatilla1 + " y "+ idZapatilla2);  
-                        }
-                    }while(codigoDescuento != "no")
-                    console.log(descuento)
-            }else {
+    precio1 = prompt("Ingrese el importe del producto");
+    continuacion = prompt("¿Desea continuar con la compra?"); // ¿continúo con un segundo producto? -------------
+    if (continuacion != "no") {
+        idZapatilla2 = prompt("Ingrese el ID del segundo producto");
+        if (idZapatilla2 <= 3) {
+            precio2 = prompt("Ingrese el importe del segundo producto");
+            continuacion = prompt("¿Desea continuar con la compra?"); // ¿continúo con un tercer producto? ----------------
+            if (continuacion != "no") {
+                idZapatilla3 = prompt("Ingrese el ID del tercer producto");
+                if (idZapatilla3 <= 3) {
+                    precio3 = prompt("Ingrese el importe del tercer producto");
+                ;suma(precio1, precio2, precio3); // Sumatoria de los productos.
+                      alert(`El total a abonar es de: $${operacion} pesos`); // backticks para generar un "template string" >> altGr + }
+                        codigoDescuento = prompt(`¿Posee algún código de descuento para el total anterior de ${operacion}?`);
+                            if (codigoDescuento != "no") {
+                                codigo = prompt("Ingrese su código de descuento");
+                                    if (codigo != "ABCD") {
+                                         prompt("Código de descuento invalido")
+                                    } else {
+                                        precioFinal = operacion * 0.15;
+                                            alert(`El importe final con descuento es de $${precioFinal}`);
+                                             break;
+                                                }
+                             }else {
+                                alert(`El total a abonar es de: $${operacion} pesos`);
+                                    }
+                }else {
+                    prompt("Ingrese un valor entre 1 y 3")
+                    }
+                }else{
+                    suma(precio1, precio2, precio3)
+                    alert(`El total a abonar es de: $${operacion} pesos`)
+                }
+            }else{
                 prompt("Ingrese un valor entre 1 y 3")
             }
-        }else{
-            alert("Su total es de " + precio1 + " por el producto nro" + idZapatilla1)
-        }
-    }while(continuacion != "no")
-        console.log ("continua la compra")
-            }
-else{
+    }else{ suma(precio1, precio2, precio3)
+    alert(`El total a abonar es de: $${operacion} pesos`)
+    }
+}else{
     prompt("Ingrese un valor entre 1 y 3")
 }
-// --------
+}while(false);
+
