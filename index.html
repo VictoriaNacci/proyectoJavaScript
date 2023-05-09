@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Zapatillas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,6 +13,13 @@
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/categorias">Categorías</a></li>
                 <li><a href="/contacto">Contacto</a></li>
+                <li>
+                  <a href="#" id="carrito-nav">
+                    Carrito (<span id="cantidadCarrito">0</span>)
+                  </a>
+                  <div id="carrito" class="carrito-oculto">
+                  </div>
+                </li>
             </ul>
         </nav>
     </header>

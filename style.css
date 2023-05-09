@@ -91,6 +91,9 @@ h1 {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
+.carrito-oculto {
+    display: none;
+  }  
 
 .producto img {
     width: 100%;
@@ -138,7 +141,29 @@ button {
     letter-spacing: 0.5px;
     border-radius: 5px;
     }
-    
+  
+  #carrito {
+    position: absolute;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    display: none;
+  }
+  
+  #carrito p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .eliminar-item {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+
     /* Pie de página */
     footer {
         background-color: var(--color-primario);
